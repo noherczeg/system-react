@@ -1,6 +1,6 @@
 # system-react
 
-React 18 + Rollup + SystemJS playground
+React 18 + MUI + Rollup + SystemJS playground
 
 ## Setup
 
