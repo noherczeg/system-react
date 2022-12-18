@@ -6,15 +6,7 @@
     <title>SystemJS React</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./systemjs@6.13.0/dist/system.min.js"></script>
-    <script type="systemjs-importmap">
-        {
-            "imports": {
-                "react": "./react@18.2.0/umd/react.production.min.js",
-                "react-dom": "./react-dom@18.2.0/umd/react-dom.production.min.js",
-                "@mui/material": "./@mui/material@5.11.0/umd/material-ui.production.min.js"
-            }
-        }
-    </script>
+    <script type="systemjs-importmap" src="./map.json" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="root"></div>

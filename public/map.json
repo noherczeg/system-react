@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "react": "./react@18.2.0/umd/react.production.min.js",
+    "react-dom": "./react-dom@18.2.0/umd/react-dom.production.min.js",
+    "@mui/material": "./@mui/material@5.11.0/umd/material-ui.production.min.js"
+  }
+}
