@@ -1,5 +1,6 @@
 {
   "imports": {
+    "axios": "./axios@1.2.1/dist/axios.min.js",
     "react": "./react@18.2.0/umd/react.production.min.js",
     "react-dom": "./react-dom@18.2.0/umd/react-dom.production.min.js",
     "i18next": "./i18next@22.4.5/dist/umd/i18next.min.js",

@@ -48,6 +48,7 @@ export default {
             targets: [
                 { src: 'public/*', dest: 'dist' },
                 copyObjects('systemjs', '/dist'),
+                copyObjects('axios', '/dist'),
                 copyObjects('react', '/umd'),
                 copyObjects('react-dom', '/umd'),
                 copyObjects('i18next', '/dist/umd'),
