@@ -19,8 +19,8 @@ function parseDependencyJSON(depName) {
 
 function copyObjects(depName, suffix, skipFolder = false) {
     return {
-        src: `node_modules/${depName}` + (suffix ? suffix : '') + (!skipFolder ? '/*' : ''),
-        dest: `dist/${depName}@${parseDependencyJSON(depName).version}` + (!skipFolder ? suffix : ''),
+        src: `node_modules/${depName}` + (suffix || '') + (!skipFolder ? '/*' : ''),
+        dest: `dist/${depName}@${parseDependencyJSON(depName).version}` + (!skipFolder ? (suffix || '') : ''),
     };
 }
 
@@ -49,6 +49,8 @@ export default {
                 { src: 'public/*', dest: 'dist' },
                 copyObjects('systemjs', '/dist'),
                 copyObjects('axios', '/dist'),
+                copyObjects('material-icons', '/iconfont'),
+                copyObjects('@fontsource/roboto', ''),
                 copyObjects('react', '/umd'),
                 copyObjects('react-dom', '/umd'),
                 copyObjects('i18next', '/dist/umd'),

@@ -1,4 +1,4 @@
-import { Card, CardContent, List, ListItem, ListItemText, Typography, Divider } from '@mui/material';
+import { Card, CardContent, List, ListItem, ListItemText, Typography, Divider, Icon } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -20,7 +20,8 @@ export function Dashboard() {
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        <Typography variant="h5" gutterBottom sx={{ display: 'flex', alignItems: 'center' }}>
+          <Icon sx={{ marginRight: '.5rem' }}>home</Icon>
           Dashboard
         </Typography>
         <Typography variant="body2">{t('dashboard.welcome', { defaultValue: 'Default value' })}</Typography>

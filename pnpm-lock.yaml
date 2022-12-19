@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@emotion/react': ^11.10.5
   '@emotion/styled': ^11.10.5
+  '@fontsource/roboto': ^4.5.8
   '@mui/material': ^5.11.0
   '@remix-run/router': ^1.1.0
   '@rollup/plugin-commonjs': ^24.0.0
@@ -17,6 +18,7 @@ specifiers:
   axios: ^1.2.1
   date-fns: ^2.29.3
   i18next: ^22.4.5
+  material-icons: ^1.13.1
   notistack: ^2.0.8
   prettier: ^2.8.1
   react: ^18.2.0
@@ -36,11 +38,13 @@ specifiers:
 dependencies:
   '@emotion/react': 11.10.5_xl5my4wapvq2ctl7qwehtbgorq
   '@emotion/styled': 11.10.5_3djhvnr4jirfvebjqpipo7gthy
+  '@fontsource/roboto': 4.5.8
   '@mui/material': 5.11.0_lskpmcsdi7ipu6qpuapyu56ihm
   '@remix-run/router': 1.1.0
   axios: 1.2.1
   date-fns: 2.29.3
   i18next: 22.4.5
+  material-icons: 1.13.1
   notistack: 2.0.8_lb7ttukhs3guqcbwzmtorbxhkm
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -419,6 +423,10 @@ packages:
 
   /@emotion/weak-memoize/0.3.0:
     resolution: {integrity: sha512-AHPmaAx+RYfZz0eYu6Gviiagpmiyw98ySSlQvCUhVGDRtDFe4DBS0x1bSjdF3gqUDYOczB+yYvBTtEylYSdRhg==}
+    dev: false
+
+  /@fontsource/roboto/4.5.8:
+    resolution: {integrity: sha512-CnD7zLItIzt86q4Sj3kZUiLcBk1dSk81qcqgMGaZe7SQ1P8hFNxhMl5AZthK1zrDM5m74VVhaOpuMGIL4gagaA==}
     dev: false
 
   /@jridgewell/gen-mapping/0.1.1:
@@ -1617,6 +1625,10 @@ packages:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
+
+  /material-icons/1.13.1:
+    resolution: {integrity: sha512-6EwhlEa4rwydNSWw11ig1oz/h/KcarJXn4n50Wd69v5Eh026Y6xBo9zLPeX4iF8+qUZV862X0AUUA0m0VaihWg==}
+    dev: false
 
   /merge-stream/2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
