@@ -51,6 +51,7 @@ export default {
                 copyObjects('axios', '/dist'),
                 copyObjects('material-icons', '/iconfont'),
                 copyObjects('@fontsource/roboto', ''),
+                copyObjects('dayjs', '/dayjs.min.js', true),
                 copyObjects('react', '/umd'),
                 copyObjects('react-dom', '/umd'),
                 copyObjects('i18next', '/dist/umd'),
@@ -58,11 +59,13 @@ export default {
                 copyObjects('@remix-run/router', '/dist'),
                 copyObjects('react-router', '/dist/umd'),
                 copyObjects('react-router-dom', '/dist/umd'),
+                copyObjects('@emotion/react', '/dist'),
+                copyObjects('@emotion/styled', '/dist'),
                 copyObjects('@mui/material', '/umd'),
             ],
         }),
     ],
     external: [
-        ...Object.keys(pkg.dependencies)
+        ...Object.keys(pkg.dependencies).filter(name => name !== '@mui/x-data-grid' && name !== '@mui/x-date-pickers')
     ],
 };

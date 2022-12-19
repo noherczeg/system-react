@@ -1,6 +1,7 @@
 {
   "imports": {
     "axios": "./axios@1.2.1/dist/axios.min.js",
+    "dayjs": "./dayjs@1.11.7/dayjs.min.js",
     "react": "./react@18.2.0/umd/react.production.min.js",
     "react-dom": "./react-dom@18.2.0/umd/react-dom.production.min.js",
     "i18next": "./i18next@22.4.5/dist/umd/i18next.min.js",
@@ -8,6 +9,8 @@
     "@remix-run/router": "./@remix-run/router@1.1.0/dist/router.umd.min.js",
     "react-router": "./react-router@6.5.0/dist/umd/react-router.production.min.js",
     "react-router-dom": "./react-router-dom@6.5.0/dist/umd/react-router-dom.production.min.js",
+    "@emotion/react": "./@emotion/react@11.10.5/dist/emotion-react.umd.min.js",
+    "@emotion/styled": "./@emotion/styled@11.10.5/dist/emotion-styled.umd.min.js",
     "@mui/material": "./@mui/material@5.11.0/umd/material-ui.production.min.js"
   }
 }

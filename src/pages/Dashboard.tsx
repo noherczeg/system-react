@@ -1,11 +1,13 @@
-import { Card, CardContent, List, ListItem, ListItemText, Typography, Divider, Icon } from '@mui/material';
+import { Card, CardContent, List, ListItem, ListItemText, Typography, Divider, Icon, Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useSnack } from '../SnackProvider';
 
 export default function Dashboard() {
   const { t } = useTranslation();
   const [pokemon, setPokemon] = useState([]);
+  const [openSnack] = useSnack();
 
   useEffect(() => {
     async function getPokemon() {
@@ -25,7 +27,7 @@ export default function Dashboard() {
           Dashboard
         </Typography>
         <Typography variant="body2">{t('dashboard.welcome', { defaultValue: 'Default value' })}</Typography>
-        <Divider sx={{ padding: '.5rem 0' }} />
+        <Divider sx={{ margin: '1rem 0' }} />
         <List>
           {pokemon.map((p: any) => (
             <ListItem key={p.name}>
@@ -33,6 +35,14 @@ export default function Dashboard() {
             </ListItem>
           ))}
         </List>
+        <Divider sx={{ margin: '1rem 0' }} />
+        <Button variant="outlined" onClick={() => openSnack('hello', { severity: 'success', autoHideDuration: 2000 })}>
+          Call snack
+        </Button>
+        <Divider sx={{ margin: '1rem 0' }} />
+        <Button variant="outlined" onClick={() => openSnack('hello', { horizontal: 'center' })}>
+          Call other snack
+        </Button>
       </CardContent>
     </Card>
   );
