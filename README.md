@@ -14,6 +14,7 @@ Showcase application utlizing SystemJS with current-gen frontend libraries.
 - [x] react-i18n-next
 - [ ] notistack
 - [ ] date-fns
+- [ ] source maps
 
 ## Setup
 
