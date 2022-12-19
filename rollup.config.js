@@ -1,12 +1,12 @@
 import { readFileSync } from 'node:fs';
 import { normalize } from 'node:path';
 import typescript from '@rollup/plugin-typescript';
-import terser from '@rollup/plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import clear from 'rollup-plugin-clear';
 import copy from 'rollup-plugin-copy';
 import define from 'rollup-plugin-define';
+import { terser } from 'rollup-plugin-terser';
 
 const pkg = JSON.parse(readFileSync(normalize('./package.json'), { encoding:'utf8', flag:'r' }).toString());
 
