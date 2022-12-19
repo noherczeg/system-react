@@ -8,8 +8,8 @@ Showcase application utlizing SystemJS with current-gen frontend libraries.
 - [x] Axios
 - [x] Roboto Fonts
 - [x] MUI
-- [x] MUI - DataGrid
-- [x] MUI - Date Pickers
+- [ ] MUI - DataGrid
+- [ ] MUI - Date Pickers
 - [x] Material Icons
 - [x] react-i18n-next
 - [ ] notistack
