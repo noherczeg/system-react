@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export function Dashboard() {
+export default function Dashboard() {
   const { t } = useTranslation();
   const [pokemon, setPokemon] = useState([]);
 

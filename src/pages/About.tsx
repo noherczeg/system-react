@@ -1,6 +1,6 @@
 import { Card, CardContent, Icon, Typography } from '@mui/material';
 
-export function About() {
+export default function About() {
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
