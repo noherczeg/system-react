@@ -8,14 +8,11 @@ React 18 + MUI + Rollup + SystemJS playground
 pnpm i
 ```
 
-## Build
+## Commands
 
 ```bash
 pnpm build
-```
 
-## Test
-
-```bash
+pnpm watch
 pnpm preview
 ```

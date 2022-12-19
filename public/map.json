@@ -2,6 +2,11 @@
   "imports": {
     "react": "./react@18.2.0/umd/react.production.min.js",
     "react-dom": "./react-dom@18.2.0/umd/react-dom.production.min.js",
+    "i18next": "./i18next@22.4.5/dist/umd/i18next.min.js",
+    "react-i18next": "./react-i18next@12.1.1/dist/umd/react-i18next.min.js",
+    "@remix-run/router": "./@remix-run/router@1.1.0/dist/router.umd.min.js",
+    "react-router": "./react-router@6.5.0/dist/umd/react-router.production.min.js",
+    "react-router-dom": "./react-router-dom@6.5.0/dist/umd/react-router-dom.production.min.js",
     "@mui/material": "./@mui/material@5.11.0/umd/material-ui.production.min.js"
   }
 }

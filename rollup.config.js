@@ -17,14 +17,10 @@ function parseDependencyJSON(depName) {
     return JSON.parse(readFileSync(from, { encoding:'utf8', flag:'r' }).toString());
 }
 
-function getEffectiveVersionForDependency(d) {
-    return parseDependencyJSON(d).version;
-}
-
-function systemCopyObject(depName, suffix, skipFolder = false) {
+function copyObjects(depName, suffix, skipFolder = false) {
     return {
         src: `node_modules/${depName}` + (suffix ? suffix : '') + (!skipFolder ? '/*' : ''),
-        dest: `dist/${depName}@${getEffectiveVersionForDependency(depName)}` + (!skipFolder ? suffix : ''),
+        dest: `dist/${depName}@${parseDependencyJSON(depName).version}` + (!skipFolder ? suffix : ''),
     };
 }
 
@@ -47,14 +43,19 @@ export default {
         commonjs(),
         nodeResolve(),
         typescript(),
-        // ...[ENV === 'production' ? terser() : undefined],
+        ...[ENV === 'production' ? terser() : undefined],
         copy({
             targets: [
                 { src: 'public/*', dest: 'dist' },
-                systemCopyObject('systemjs', '/dist'),
-                systemCopyObject('react', '/umd'),
-                systemCopyObject('react-dom', '/umd'),
-                systemCopyObject('@mui/material', '/umd'),
+                copyObjects('systemjs', '/dist'),
+                copyObjects('react', '/umd'),
+                copyObjects('react-dom', '/umd'),
+                copyObjects('i18next', '/dist/umd'),
+                copyObjects('react-i18next', '/dist/umd'),
+                copyObjects('@remix-run/router', '/dist'),
+                copyObjects('react-router', '/dist/umd'),
+                copyObjects('react-router-dom', '/dist/umd'),
+                copyObjects('@mui/material', '/umd'),
             ],
         }),
     ],

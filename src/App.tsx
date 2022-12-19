@@ -1,33 +1,35 @@
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
-
-const bull = (
-  <Box component="span" sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}>
-    •
-  </Box>
-);
+import { AppBar, Box, Button, CssBaseline, Toolbar, Typography } from '@mui/material';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { I18nextProvider } from 'react-i18next';
+import { i18n } from './i18n';
 
 export function App() {
+  const navigate = useNavigate();
+
   return (
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <I18nextProvider i18n={i18n}>
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <AppBar component="nav">
+          <Toolbar>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+              MUI
+            </Typography>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Button sx={{ color: '#fff' }} onClick={() => navigate('/')}>
+                Dashboard
+              </Button>
+              <Button sx={{ color: '#fff' }} onClick={() => navigate('/about')}>
+                About
+              </Button>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        <Box component="main" sx={{ p: 3 }}>
+          <Toolbar />
+          <Outlet />
+        </Box>
+      </Box>
+    </I18nextProvider>
   );
 }
