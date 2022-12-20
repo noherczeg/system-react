@@ -7,22 +7,10 @@ import clear from 'rollup-plugin-clear';
 import copy from 'rollup-plugin-copy';
 import define from 'rollup-plugin-define';
 import { terser } from 'rollup-plugin-terser';
+import { copyObjects } from './rollup/utils.js';
 
 const pkg = JSON.parse(readFileSync(normalize('./package.json'), { encoding:'utf8', flag:'r' }).toString());
-
 const ENV = process.env.NODE_ENV;
-
-function parseDependencyJSON(depName) {
-    const from = normalize(`./node_modules/${depName}/package.json`);
-    return JSON.parse(readFileSync(from, { encoding:'utf8', flag:'r' }).toString());
-}
-
-function copyObjects(depName, suffix, skipFolder = false) {
-    return {
-        src: `node_modules/${depName}` + (suffix || '') + (!skipFolder ? '/*' : ''),
-        dest: `dist/${depName}@${parseDependencyJSON(depName).version}` + (!skipFolder ? (suffix || '') : ''),
-    };
-}
 
 export default {
     input: 'src/index.tsx',
