@@ -5,8 +5,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import clear from 'rollup-plugin-clear';
 import copy from 'rollup-plugin-copy';
-import define from 'rollup-plugin-define';
-import { terser } from 'rollup-plugin-terser';
+import replace from '@rollup/plugin-replace';
 import { copyObjects } from './rollup/utils.js';
 
 const pkg = JSON.parse(readFileSync(normalize('./package.json'), { encoding:'utf8', flag:'r' }).toString());
@@ -23,15 +22,12 @@ export default {
         clear({
             targets: ['dist'],
         }),
-        define({
-            replacements: {
-                'process.env.NODE_ENV': '"production"', // shake off jsx-runtime dev-mode...
-            }
+        replace({
+            'process.env.NODE_ENV': JSON.stringify('production'), // shake off jsx-runtime dev-mode...
         }),
         commonjs(),
         nodeResolve(),
         typescript(),
-        ...[ENV === 'production' ? terser() : undefined],
         copy({
             targets: [
                 { src: 'public/*', dest: 'dist' },
