@@ -3,7 +3,9 @@
     "axios": "./axios@1.2.1/dist/axios.min.js",
     "dayjs": "./dayjs@1.11.7/dayjs.min.js",
     "react": "./react@18.2.0/umd/react.production.min.js",
+    "react/jsx-runtime": "./react-jsx-runtime.js",
     "react-dom": "./react-dom@18.2.0/umd/react-dom.production.min.js",
+    "react-dom/client": "./react-dom-client.js",
     "i18next": "./i18next@22.4.6/dist/umd/i18next.min.js",
     "react-i18next": "./react-i18next@12.1.1/dist/umd/react-i18next.min.js",
     "@remix-run/router": "./@remix-run/router@1.1.0/dist/router.umd.min.js",
@@ -11,6 +13,9 @@
     "react-router-dom": "./react-router-dom@6.5.0/dist/umd/react-router-dom.production.min.js",
     "@emotion/react": "./@emotion/react@11.10.5/dist/emotion-react.umd.min.js",
     "@emotion/styled": "./@emotion/styled@11.10.5/dist/emotion-styled.umd.min.js",
-    "@mui/material": "./@mui/material@5.11.1/umd/material-ui.production.min.js"
+    "@mui/material": "./@mui/material@5.11.1/umd/material-ui.production.min.js",
+    "@mui/x-data-grid": "./mui-x-data-grid.js",
+    "@mui/x-date-pickers": "./mui-x-date-pickers.js",
+    "@mui/x-date-pickers/AdapterDayjs": "./mui-x-date-pickers-adapter-day-js.js"
   }
 }
